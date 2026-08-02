@@ -1111,16 +1111,14 @@ body::before {
 /* ==================== 总览页 - 用户卡片网格 ==================== */
 .user-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 12px;
-}
-@media (max-width: 374px) {
-  .user-grid { grid-template-columns: 1fr; }
 }
 .user-card {
   cursor: pointer;
   text-align: center;
-  padding: 20px 16px;
+  padding: 16px 12px;
+  overflow: visible;
 }
 .user-card .user-avatar-lg {
   width: 56px; height: 56px;
@@ -1138,10 +1136,10 @@ body::before {
   font-size: 11px; color: var(--accent); margin-bottom: 8px;
 }
 .user-card .user-card-stats {
-  display: flex; justify-content: center; gap: 16px;
-  font-size: 11px; color: var(--text-muted);
+  display: flex; justify-content: center; gap: 2px 4px; flex-wrap: nowrap;
+  font-size: 9px; color: var(--text-muted);
 }
-.user-card .user-card-stats span { display: flex; align-items: center; gap: 4px; }
+.user-card .user-card-stats span { display: flex; align-items: center; gap: 2px; white-space: nowrap; flex-shrink: 0; }
 .user-card .user-card-stats .stat-val { color: var(--text-secondary); font-weight: 600; }
 
 /* 用户设备下钻页 - 只读提示条 */
@@ -1158,20 +1156,20 @@ body::before {
 
 /* 平板适配 */
 @media (min-width: 768px) {
-  .user-grid { grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+  .user-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
   .user-card { padding: 24px 20px; }
   .user-card .user-avatar-lg { width: 68px; height: 68px; font-size: 32px; margin-bottom: 14px; }
   .user-card .user-card-name { font-size: 17px; }
   .user-card .user-card-role { font-size: 13px; }
-  .user-card .user-card-stats { font-size: 13px; gap: 20px; }
+  .user-card .user-card-stats { font-size: 11px; gap: 2px 6px; }
   .readonly-banner { padding: 12px 18px; font-size: 14px; }
 }
 @media (min-width: 1024px) {
-  .user-grid { grid-template-columns: repeat(4, 1fr); gap: 20px; }
-  .user-card { padding: 28px 24px; }
-  .user-card .user-avatar-lg { width: 76px; height: 76px; font-size: 36px; }
-  .user-card .user-card-name { font-size: 18px; }
-  .user-card .user-card-stats { font-size: 14px; }
+  .user-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .user-card { padding: 24px 16px; }
+  .user-card .user-avatar-lg { width: 72px; height: 72px; font-size: 34px; }
+  .user-card .user-card-name { font-size: 17px; }
+  .user-card .user-card-stats { font-size: 11px; gap: 2px 4px; }
 }
 </style>
 </head>
